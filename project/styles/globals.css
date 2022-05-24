@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Bellefair&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.logo {
+    font-family: "Bellefair", serif;
+    font-size: 40px;
+    display: flex;
+}
+
+.logo .one,
+.logo .two {
+    visibility: hidden;
+    width: 0px;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.logo:hover span.one,
+.logo:hover span.two {
+    visibility: visible;
+    opacity: 1;
+}
+
+.logo:hover span.one {
+    width: 96px;
+}
+
+.logo:hover span.two {
+    width: 84px;
+}
+
+.hero-image {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("/images/hero.jpg");
+    background-size: cover;
+}
