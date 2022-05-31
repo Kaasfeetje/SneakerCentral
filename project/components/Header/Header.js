@@ -24,7 +24,7 @@ const Header = () => {
             <nav
                 className={`${
                     isOpen ? "block" : "hidden"
-                } absolute w-2/3 h-screen right-0 top-0 bg-white md:static md:h-auto md:flex md:w-full`}
+                } absolute w-2/3 h-screen right-0 top-0 bg-white md:static md:h-auto md:flex md:w-full md:px-2`}
             >
                 <div
                     onClick={() => setIsOpen(false)}

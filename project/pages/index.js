@@ -1,3 +1,4 @@
+import Category from "../components/Category/Category";
 import Header from "../components/Header/Header";
 
 export default function Home() {
@@ -18,8 +19,9 @@ export default function Home() {
                     Shop now
                 </button>
             </main>
-            <section>
-                
+            <section className="md:flex">
+                <Category gender="Men" image={"/images/1.jpg"} />
+                <Category gender="Women" image={"/images/2.jpg"} />
             </section>
         </div>
     );
