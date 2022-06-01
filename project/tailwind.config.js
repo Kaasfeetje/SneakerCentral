@@ -10,6 +10,12 @@ module.exports = {
             },
             colors: {
                 brown: "#C6AC8F",
+                grayishBlue: "#22333B",
+                beige: "#EAE0D5",
+                darkBrown: "#0A0908",
+            },
+            height: {
+                100: "30rem",
             },
         },
     },

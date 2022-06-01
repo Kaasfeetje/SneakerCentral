@@ -2,7 +2,7 @@ import React from "react";
 
 const Category = ({ image, gender }) => {
     return (
-        <div className="relative h-96 w-full">
+        <div className="relative h-96 w-full lg:h-100">
             <img
                 className={`w-full h-full object-cover`}
                 src={image}

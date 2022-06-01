@@ -3,11 +3,13 @@ import Link from "next/link";
 import Logo from "./Logo";
 import MenuIcon from "../Icons/MenuIcon";
 import XIcon from "../Icons/XIcon";
+import ShoppingCartIcon from "../Icons/ShoppingCartIcon";
+import Search from "./Search";
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
     return (
-        <header className="fixed flex justify-between items-center bg-white w-full">
+        <header className="z-10 fixed flex justify-between items-center bg-white w-full">
             <div className="ml-4">
                 <Link href="/">
                     <Logo />
@@ -42,10 +44,17 @@ const Header = () => {
                     <li className="py-4 md:py-0 md:px-4">
                         <Link href="/products">All</Link>
                     </li>
-                    <li className="mt-auto md:mt-0 md:ml-auto">
-                        Search thingy
+                    <li className="mt-auto md:mt-0 md:ml-auto md:px-4">
+                        <Search />
                     </li>
-                    <li className="">Cart</li>
+                    <li className="flex items-center font-medium">
+                        <Link href="/cart">
+                            <div className="cursor-pointer">
+                                <span className="md:hidden">Cart</span>
+                                <ShoppingCartIcon />
+                            </div>
+                        </Link>
+                    </li>
                 </ul>
             </nav>
         </header>

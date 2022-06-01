@@ -1,5 +1,7 @@
 import Category from "../components/Category/Category";
+import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
+import ProductCard from "../components/ProductCard/ProductCard";
 
 export default function Home() {
     return (
@@ -23,6 +25,39 @@ export default function Home() {
                 <Category gender="Men" image={"/images/1.jpg"} />
                 <Category gender="Women" image={"/images/2.jpg"} />
             </section>
+            <section className="md:flex">
+                <ProductCard
+                    color="#CA021C"
+                    textColor="#fff"
+                    project={{
+                        image: "/images/9.jpg",
+                        name: "Red",
+                        brand: "Nike",
+                        price: 110.0,
+                    }}
+                />
+                <ProductCard
+                    color="#F8F9FB"
+                    textColor="#000"
+                    project={{
+                        image: "/images/8.jpg",
+                        name: "White",
+                        brand: "Nike",
+                        price: 64.99,
+                    }}
+                />
+                <ProductCard
+                    color="#008CFF"
+                    textColor="#fff"
+                    project={{
+                        image: "/images/7.jpg",
+                        name: "Blue",
+                        brand: "Nike",
+                        price: 79.99,
+                    }}
+                />
+            </section>
+            <Footer />
         </div>
     );
 }
