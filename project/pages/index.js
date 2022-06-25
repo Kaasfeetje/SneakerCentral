@@ -1,9 +1,36 @@
+import { useEffect } from "react";
 import Category from "../components/Category/Category";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
 import ProductCard from "../components/ProductCard/ProductCard";
+import { fetchProducts } from "./api/product";
 
-export default function Home() {
+export async function getStaticProps() {
+    const products = await fetchProducts();
+
+    return {
+        props: {
+            products,
+        },
+    };
+}
+
+export default function Home({ products }) {
+    useEffect(() => {
+        const query = new URLSearchParams(window.location.search);
+        if (query.get("success")) {
+            console.log(
+                "Order placed! You will receive an email confirmation."
+            );
+        }
+
+        if (query.get("canceled")) {
+            console.log(
+                "Order canceled -- continue to shop around and checkout when you’re ready."
+            );
+        }
+    }, []);
+
     return (
         <div>
             <Header />
@@ -29,32 +56,17 @@ export default function Home() {
                 <ProductCard
                     color="#CA021C"
                     textColor="#fff"
-                    project={{
-                        image: "/images/9.jpg",
-                        name: "Red",
-                        brand: "Nike",
-                        price: 110.0,
-                    }}
+                    product={products[0]}
                 />
                 <ProductCard
                     color="#F8F9FB"
                     textColor="#000"
-                    project={{
-                        image: "/images/8.jpg",
-                        name: "White",
-                        brand: "Nike",
-                        price: 64.99,
-                    }}
+                    product={products[1]}
                 />
                 <ProductCard
                     color="#008CFF"
                     textColor="#fff"
-                    project={{
-                        image: "/images/7.jpg",
-                        name: "Blue",
-                        brand: "Nike",
-                        price: 79.99,
-                    }}
+                    product={products[2]}
                 />
             </section>
             <Footer />

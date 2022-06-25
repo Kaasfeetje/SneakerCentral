@@ -36,6 +36,9 @@ const Header = () => {
                 </div>
                 <ul className="pt-16 h-full flex flex-col md:flex-row md:items-center md:pt-0 md:w-full">
                     <li className="py-4 md:py-0 md:px-4">
+                        <Link href="/">Home</Link>
+                    </li>
+                    <li className="py-4 md:py-0 md:px-4">
                         <Link href="/products/men">Men</Link>
                     </li>
                     <li className="py-4 md:py-0 md:px-4">
